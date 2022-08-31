@@ -1,25 +1,27 @@
 import logo from "./logo.svg";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import React from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
+import NavBar from "./components/NavBar";
 
 function App() {
+  let arreglo = [" Prólogo ", " índice ", " Proyectos ", "Contacto"];
+
+  function bienvenida() {
+    return arreglo.map((nombre) => {
+      return <Nav.Link>{nombre}</Nav.Link>;
+    });
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Navbar bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="#home"> Guía de proyectos </Navbar.Brand>
+        <Nav className="me-auto">{bienvenida()}</Nav>
+      </Container>
+      <NavBar></NavBar>
+    </Navbar>
   );
 }
 
