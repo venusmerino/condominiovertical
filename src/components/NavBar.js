@@ -5,8 +5,6 @@ function NavBar() {
     <>
       NavBar
       <Link></Link>
-      <Link></Link>
-      <Link></Link>
     </>
   );
 }
