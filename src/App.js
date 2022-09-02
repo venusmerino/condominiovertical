@@ -4,25 +4,19 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
 import { Container, Nav, Navbar } from "react-bootstrap";
 import NavBar from "./components/NavBar";
+import HomePage from "./Pages/HomePage";
 
 function App() {
-  let arreglo = [" Prólogo ", " índice ", " Proyectos ", "Contacto"];
-
-  function bienvenida() {
-    return arreglo.map((nombre) => {
-      return <Nav.Link>{nombre}</Nav.Link>;
-    });
-  }
-
   return (
-    <Navbar bg="dark" variant="dark">
-      <Container>
-        <Navbar.Brand href="#home"> Guía de proyectos </Navbar.Brand>
-        <Nav className="me-auto">{bienvenida()}</Nav>
-      </Container>
-      <NavBar></NavBar>
-    </Navbar>
+    <>
+      <HomePage></HomePage>
+    </>
   );
 }
 
 export default App;
+
+//crear un componente homepage
+//sserá la pagina principal
+//toda la estructura debe ir dentro
+//debe ir en app, para que se vea. Quitar todo lo del app y poner
